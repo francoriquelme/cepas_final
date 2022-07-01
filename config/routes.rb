@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :wines
+  devise_for :users
+  get 'home/index'
   resources :strains
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :wines
+  # root "strains#index"
+  root to: "home#index"
 end
